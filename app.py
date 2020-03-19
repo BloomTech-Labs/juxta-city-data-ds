@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, json
 from flask_cors import CORS
 import pandas as pd
 
-df = pd.read_csv('./final_with_rank_2.csv')
+df = pd.read_csv('./final_0318.csv')
 photos = pd.read_csv('./photos_big.csv')
 
 app = Flask(__name__)
