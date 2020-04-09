@@ -56,7 +56,7 @@ def recommend_cities():
     # Create "states" dataframe
     multiple = []
 
-    state = list(state.split(' '))
+    state = list(state.split(', '))
 
     if state != ['None']:
         for item in state:
