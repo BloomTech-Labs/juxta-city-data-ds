@@ -34,10 +34,12 @@ def top_25_data():
 
 
 # Returns up to top 5 cities based on filters and livability score
-# Route structure: http://junta-test.herokuapp.com/recommend?state=None&
-# population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&
-# population_density=0&cost_of_living=0&average_commute=0&air_quality=0
-# [adjust values as appropriate]
+'''
+Route structure: http://junta-test.herokuapp.com/recommend?state=None&
+population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&
+population_density=0&cost_of_living=0&average_commute=0&air_quality=0
+[adjust values as appropriate]
+'''
 @app.route('/recommend', methods=['GET', 'POST'])
 def recommend_cities():
     state = request.args['state']
@@ -54,9 +56,9 @@ def recommend_cities():
     # Create "states" dataframe
     multiple = []
 
-    state = list(state.split(' '))
+    state = list(state.split(', '))
 
-    if state != 'None':
+    if state != ['None']:
         for item in state:
             frame = df[df['state'] == item]
             multiple.append(frame)
@@ -115,7 +117,7 @@ def recommend_cities():
     all = pd.merge(nine, states, on='city', how='inner')
 
     # Sort by livability score and convert to a dictionary
-    sort = all.sort_values(by='LivabilityScore_states', ascending=False)
+    sort = all.sort_values(by='LivabilityScore_y', ascending=False)
     dict = sort.to_dict('records')
 
     # Allow less than 5 results if necessary
@@ -144,14 +146,17 @@ def all_data():
     change = data['population_change']
     density = data['Population_Density']
     age = data['Median_Age']
+
     # Economy
     houseinc = data['Median_Income']
     capitainc = data['per_capita_Income']
     poverty = data['Percent_below_Poverty']
     industry = data['Most_Common_Industries']
+
     # Climate
     aqi = data['AQI']
     weather = 'to be added'
+
     # Cost of Living
     cli = data['Cost_of_Living_Index']
     house = data['Median_House_Value']
