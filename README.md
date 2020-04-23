@@ -40,6 +40,8 @@ SQLite
 
 Google Cloud Platform - BigQuery
 
+AWS Sagemaker
+
 Import.io
 
 
