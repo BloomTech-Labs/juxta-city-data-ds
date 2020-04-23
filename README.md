@@ -70,33 +70,39 @@ Import.io
 
 The data API can be found at https://junta-test.herokuapp.com. Listed below are the routes and the aspects of the data they access.
 
--https://junta-test.herokuapp.com/name?id= {0-7127}
+#### City Name
+
+https://junta-test.herokuapp.com/name?id= {0-7127}
 
 Example: https://junta-test.herokuapp.com/name?id=2126
 
 Returns the city name which corresponds with the given id
 
+#### Top 25 Cities
 
--https://junta-test.herokuapp.com/top25
+https://junta-test.herokuapp.com/top25
 
 Returns all data for all of the top 25 cities according to their "Livability Score"
 
+#### All Data
 
--https://junta-test.herokuapp.com/data?city= {City, State}
+https://junta-test.herokuapp.com/data?city= {City, State}
 
 Example: https://junta-test.herokuapp.com/data?city=Birmingham, Alabama
 
 Returns all data for the given city
 
+#### Search
 
--https://junta-test.herokuapp.com/search?search= {Any characters}
+https://junta-test.herokuapp.com/search?search= {Any characters}
 
 Example: https://junta-test.herokuapp.com/search?search=bir
 
 Returns all city names which start with the given characters
 
+#### Recommendation
 
--http://junta-test.herokuapp.com/recommend?state=None&population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&population_density=0&cost_of_living=0&average_commute=0&air_quality=0 {adjust values as appropriate}
+http://junta-test.herokuapp.com/recommend?state=None&population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&population_density=0&cost_of_living=0&average_commute=0&air_quality=0 {adjust values as appropriate}
 
 Returns 1-5 cities based on the given filters, ranked by "Livability Scored"
 
