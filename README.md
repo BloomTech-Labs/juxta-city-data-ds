@@ -40,7 +40,7 @@ SQLite
 
 Google Cloud Platform - BigQuery
 
-AWS Sagemaker
+AWS SageMaker
 
 Import.io
 
