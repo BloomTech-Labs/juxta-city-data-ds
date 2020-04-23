@@ -16,9 +16,9 @@ You can find the project at [findur.city](http://www.findur.city/).
 ## Project Overview
 
 
-1️⃣ [Trello Board](https://trello.com/b/R2QOaAEe/labspt7-juxta-city-data)
+[Trello Board](https://trello.com/b/R2QOaAEe/labspt7-juxta-city-data)
 
-1️⃣ [Product Canvas](https://www.notion.so/ab80ad6b9a9341e38ea49eece4c10498?v=e7d7bf0069e34cad85e28b0d315d6675)
+[Product Canvas](https://www.notion.so/ab80ad6b9a9341e38ea49eece4c10498?v=e7d7bf0069e34cad85e28b0d315d6675)
 
 🚫 Replace lorem ipsum with a description of your project
 
@@ -26,16 +26,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-1️⃣ [Deployed Front End](http://www.findur.city/)
+[Deployed Front End](http://www.findur.city/)
 
 ### Tech Stack
 
-🚫 List all of the languages, frameworks, services, etc used here.
 Python
+
 Heroku
+
 Flask
+
 SQLite
+
 Google Cloud Platform - BigQuery
+
 Import.io
 
 
@@ -43,23 +47,8 @@ Import.io
 
 🚫 Describe your models here
 
-### 2️⃣ Explanatory Variables
-
--   Explanatory Variable 1
--   Explanatory Variable 2
--   Explanatory Variable 3
--   Explanatory Variable 4
--   Explanatory Variable 5
-
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
-
-
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+-   [City-Data.com] (https://www.city-data.com/)
 
 ### Python Notebooks
 
