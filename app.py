@@ -236,6 +236,7 @@ def desc_and_livability():
         # Basic
         id = data['id']
         name = data['City_Name']
+        name_and_state = data['city']
         score = data['LivabilityScore']
 
         # Population
@@ -284,6 +285,7 @@ def desc_and_livability():
         # Descriptions
         copy['id'] = [f'{id}']
         copy['name'] = [f'{name}']
+        copy['name_and_state'] = [f'{name_and_state}']
         copy['livability_score'] = f'{score}'
         copy['population_desc'] = f'The population is {pop} as of 2017, which is a {change}% {growth} since 2000. The population density is {density} people per square mile, which is {rise} than the optimal population density of 1304. Finally, the average resident age in {name} is {age} years old.'
         copy['economy_desc'] = f'In {name}, the median household income is ${houseinc}. This means that, per person in the city, the average annual income is ${capitainc}. {poverty}% of people live below the poverty line. The most common industries are the following: {industry}.'
