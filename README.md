@@ -20,11 +20,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 [Product Canvas](https://www.notion.so/ab80ad6b9a9341e38ea49eece4c10498?v=e7d7bf0069e34cad85e28b0d315d6675)
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+An app that analyzes data from cities such as populations, cost of living, crime rates and many other social and economic factors that are important in deciding where someone would like to live. This app will present such important data in an intuitive and easy to understand interface.
 
 [Deployed Front End](http://www.findur.city/)
 
