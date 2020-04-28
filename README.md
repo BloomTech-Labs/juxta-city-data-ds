@@ -93,7 +93,7 @@ Returns all city names which start with the given characters
 
 http://junta-test.herokuapp.com/recommend?state=None&population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&population_density=0&cost_of_living=0&average_commute=0&air_quality=0 {adjust values as appropriate}
 
-Returns 1-5 cities based on the given filters, ranked by "Livability Scored"
+Returns 1-5 cities based on the given filters, ranked by "Livability Score"
 
 
 ## Contributing
