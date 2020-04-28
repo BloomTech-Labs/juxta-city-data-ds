@@ -41,10 +41,6 @@ AWS SageMaker
 Import.io
 
 
-### 2️⃣ Predictions
-
-🚫 Describe your models here
-
 ### Data Sources
 -   [City-Data.com] (https://www.city-data.com/)
 
@@ -58,9 +54,6 @@ Import.io
 
 [Python Notebook 3](🚫add link to python notebook here)
 
-### 3️⃣ How to connect to the web API
-
-🚫 List directions on how to connect to the API here
 
 ### How to connect to the data API
 
