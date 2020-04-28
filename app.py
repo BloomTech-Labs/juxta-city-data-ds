@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, json
 from flask_cors import CORS
 import pandas as pd
 
-df = pd.read_csv('./final_0318.csv')
+df = pd.read_csv('./final_0427.csv')
 photos = pd.read_csv('./photos_big.csv')
 
 app = Flask(__name__)
@@ -253,7 +253,9 @@ def desc_and_livability():
 
         # Climate
         aqi = data['AQI']
-        weather = 'to be added'
+        cold = data['Coldday_Count']
+        hot = data['Hotday_Count']
+        rain = data['Rainday_Count']
 
         # Cost of Living
         cli = data['Cost_of_Living_Index']
@@ -289,7 +291,7 @@ def desc_and_livability():
         copy['livability_score'] = f'{score}'
         copy['population_desc'] = f'The population is {pop} as of 2017, which is a {change}% {growth} since 2000. The population density is {density} people per square mile, which is {rise} than the optimal population density of 1304. Finally, the average resident age in {name} is {age} years old.'
         copy['economy_desc'] = f'In {name}, the median household income is ${houseinc}. This means that, per person in the city, the average annual income is ${capitainc}. {poverty}% of people live below the poverty line. The most common industries are the following: {industry}.'
-        copy['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! The average weather is {weather}.'
+        copy['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! Last year, there were {cold} cold days, {hot} hot days, and {rain} rainy days.'
         copy['living_cost_desc'] = f"On a national scale, {name}'s cost of living is relatively {cli_rel}, with a score of {cli}. The median home value is ${house}, with a housing debt to income ratio of {hdti}. That includes the cost of property taxes, which is ${tax} on average. If you're a renter, you can expect a median cost of ${rent}, and the rent to income ratio is {rti}. Last but not least to consider, the average commute time is {drive} minutes."
 
         output2 = copy.to_dict('records')
@@ -326,7 +328,9 @@ def all_data():
 
     # Climate
     aqi = data['AQI']
-    weather = 'to be added'
+    cold = data['Coldday_Count']
+    hot = data['Hotday_Count']
+    rain = data['Rainday_Count']
 
     # Cost of Living
     cli = data['Cost_of_Living_Index']
@@ -358,7 +362,7 @@ def all_data():
     # Descriptions
     data['population_desc'] = f'The population is {pop} as of 2017, which is a {change}% {growth} since 2000. The population density is {density} people per square mile, which is {rise} than the optimal population density of 1304. Finally, the average resident age in {name} is {age} years old.'
     data['economy_desc'] = f'In {name}, the median household income is ${houseinc}. This means that, per person in the city, the average annual income is ${capitainc}. {poverty}% of people live below the poverty line. The most common industries are the following: {industry}.'
-    data['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! The average weather is {weather}.'
+    data['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! Last year, there were {cold} cold days, {hot} hot days, and {rain} rainy days.'
     data['living_cost_desc'] = f"On a national scale, {name}'s cost of living is relatively {cli_rel}, with a score of {cli}. The median home value is ${house}, with a housing debt to income ratio of {hdti}. That includes the cost of property taxes, which is ${tax} on average. If you're a renter, you can expect a median cost of ${rent}, and the rent to income ratio is {rti}. Last but not least to consider, the average commute time is {drive} minutes."
 
     everything = data
