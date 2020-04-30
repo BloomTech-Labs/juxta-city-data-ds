@@ -32,6 +32,10 @@ Heroku
 
 Flask
 
+Docker
+
+Plotly Dash
+
 SQLite
 
 Google Cloud Platform - BigQuery
@@ -44,15 +48,23 @@ Import.io
 ### Data Sources
 -   [City-Data.com] (https://www.city-data.com/)
 
+-   [Twitter.com] (https://twitter.com/home)
+
+-   [GCP] (https://cloud.google.com/)
+
 ### Python Notebooks
 
-🚫  Add to or delete python notebook links as needed for your project
+[City Data Testing](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/CityDataTesting.ipynb)
 
-[Python Notebook 1](🚫add link to python notebook here)
+[Cleaning and JSON](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/Cleaning%20and%20JSON%20-%20Anika.ipynb)
 
-[Python Notebook 2](🚫add link to python notebook here)
+[Exploration and Testing](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/Exploration%20and%20Testing%20-%20Anika.ipynb)
 
-[Python Notebook 3](🚫add link to python notebook here)
+[Photos, Filtering, and Recommendation](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/Photos%2C%20Filtering%2C%20and%20Recommendation%20-%20Anika.ipynb)
+
+[Close Matches](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/Close%20Matches%20-%20Anika.ipynb)
+
+[Weather](https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/Weather%20-%20Anika.ipynb)
 
 
 ### How to connect to the data API
@@ -94,6 +106,10 @@ Returns all city names which start with the given characters
 http://junta-test.herokuapp.com/recommend?state=None&population=0&population_change=0&median_age=0&house_cost=0&rental_cost=0&population_density=0&cost_of_living=0&average_commute=0&air_quality=0 {adjust values as appropriate}
 
 Returns 1-5 cities based on the given filters, ranked by "Livability Score"
+
+### Twitter Streaming App
+
+
 
 
 ## Contributing
