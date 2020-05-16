@@ -1,0 +1,8 @@
+seaborn
+flask
+flask-cors
+pandas
+numpy
+requests
+bs4
+scipy

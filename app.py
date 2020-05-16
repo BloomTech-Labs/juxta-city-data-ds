@@ -5,6 +5,10 @@ import pandas as pd
 df = pd.read_csv('./final_0427.csv')
 photos = pd.read_csv('./photos_big.csv')
 
+# JUXTA 2.0 Heart Disease data
+heart_disease = pd.read_csv('./report.csv')
+
+
 app = Flask(__name__)
 CORS(app)
 
@@ -390,6 +394,12 @@ def search_names():
         all.append(city)
 
     return jsonify(all)
+
+
+# JUXTA 2.0 Starting endpoint for health-related data
+# -------------
+@app.route('/heart', methods=['GET', 'POST'])
+def heart_data():
 
 if __name__ == "__main__":
     app.run()
