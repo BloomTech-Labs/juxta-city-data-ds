@@ -6,7 +6,7 @@ df = pd.read_csv('./final_0427.csv')
 photos = pd.read_csv('./photos_big.csv')
 
 # JUXTA 2.0 Heart Disease data
-heart_disease = pd.read_csv('./report.csv')
+heart_disease = pd.read_csv('./city_county_state.csv')
 
 
 app = Flask(__name__)
@@ -28,6 +28,15 @@ def id_name_only():
     name = output[0]['city']
     return jsonify(name)
 
+
+# # JUXTA 2.0 Starting endpoint for health-related data
+# # -------------
+# @app.route('/heart', methods=['GET', 'POST'])
+# def heart_data():
+#     cities = request.args['city']
+#     city = heart_disease[heart_disease['city']== cities]
+#     output = city.to_dict('records')
+#     return jsonify(output)
 
 # Returns only data for top 25 cities
 # Route structure: https://junta-test.herokuapp.com/top25
@@ -395,11 +404,6 @@ def search_names():
 
     return jsonify(all)
 
-
-# JUXTA 2.0 Starting endpoint for health-related data
-# -------------
-@app.route('/heart', methods=['GET', 'POST'])
-def heart_data():
 
 if __name__ == "__main__":
     app.run()
