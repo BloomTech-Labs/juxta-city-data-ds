@@ -4,6 +4,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ## Contributors
 
+### Version 1.0
 
 |                                       [Anika Zolman-Nacey](https://github.com/AnikaZN)                                        |                                       [Karthik Mahendra](https://github.com/kmk028)                                        |                                       [Raul Harrington, Jr.](https://github.com/cicbeast)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
@@ -12,6 +13,13 @@ You can find the project at [findur.city](http://www.findur.city/).
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/anika-zolman-nacey/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/karthik-mahendra-a63a4324/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/raul-harrington-1b490a56/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 
+### Version 2.0
+
+|                                       [Arturo Obregon](https://github.com/artbrgn)                                        |                                       [Ashley Gaskins](https://github.com/ash827)                                        |                                       [James Barciz](https://github.com/JamesBarciz)                                     |                                       [Pedro Escobedo](https://github.com/pedroescobedob)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width = "200" height="200" />](https://github.com/artbrgn)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width = "200" />](https://github.com/ash827)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width = "200" />](https://github.com/JamesBarciz)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JPZERLK-84b582210ffb-512" width = "200" />](https://github.com/pedroescobedob)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob)           |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedro-escobedo-39a23615b/) |
 
 ## Project Overview
 
