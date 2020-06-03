@@ -22,7 +22,7 @@ housing = pd.read_csv('https://raw.githubusercontent.com/Lambda-School-Labs/juxt
 job = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/job_data.csv')
 location = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/location_data.csv')
 people = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/people_stats_data.csv')
-reference = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/reference_data.csv')
+reference = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/reference.csv')
 
 # Connect to PostgreSQL Database
 connection = psycopg2.connect(database=DB_NAME, user=DB_USER, 
@@ -106,7 +106,7 @@ DROP TABLE IF EXISTS reference;
 CREATE TABLE IF NOT EXISTS reference (
     id INT PRIMARY KEY,
     code VARCHAR(2),
-    fips FLOAT,
+    fips INT,
     county VARCHAR(16),
     City_Name VARCHAR(22)
 );
@@ -128,7 +128,7 @@ housing_values = list(housing.to_records(index=False))
 job_values = list(job.to_records(index=False))
 location_values = list(location.to_records(index=False))
 people_values = list(people.to_records(index=False))
-# reference_values = list(reference.to_records(index=False))
+reference_values = list(reference.to_records(index=False))
 
 # Insert the data into PostgreSQL Database
 heart_insert = '''
@@ -173,7 +173,7 @@ execute_values(cursor, housing_insert, housing_values)
 execute_values(cursor, job_insert, job_values)
 execute_values(cursor, location_insert, location_values)
 execute_values(cursor, people_insert, people_values)
-# execute_values(cursor, reference_insert, reference_values)
+execute_values(cursor, reference_insert, reference_values)
 
 # Commit changes to the Postgres instance
 connection.commit()
