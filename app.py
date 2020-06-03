@@ -8,7 +8,7 @@ import pandas as pd
 # Dataframe column[0] is an unnamed column that resulted from
 # putting the dataframe into a CSV with no specified index.
 
-unique_city_health_stats = pd.read_csv('./unique_cities_health_stats.csv').drop(columns='Unnamed: 0')
+heart_stats = pd.read_csv('./heartDisease_data_9001.csv')
 # print(unique_city_health_stats.shape)
 # print(unique_city_health_stats.head())
 
@@ -25,3 +25,12 @@ def about():
 @app.route("/team")
 def team():
     return render_template('team.html')
+
+@app.route("/data", methods=['GET', 'POST'])
+def heart_disease():
+    state = request.args['state']
+    name = heart_stats[heart_stats['state'] == state]
+    output = name.to_dict('records')
+    county = [output[i]['county'] for i in list(range(len(output)))]
+    stats = [output[i]['Heart Disease Value'] for i in list(range(len(output)))]
+    return jsonify(county, stats)
