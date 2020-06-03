@@ -31,9 +31,13 @@ cursor = connection.cursor()
 
 # This block of code is needed so psycopg2 can register numpy types
 # Source: https://rehalcon.blogspot.com/2010/03/sqlalchemy-programmingerror-cant-adapt.html
-def addapt_numpy_float64(numpy_float64):
+def adapt_numpy_float64(numpy_float64):
   return AsIs(numpy_float64)
-register_adapter(numpy.float64, addapt_numpy_float64)
+def adapt_numpy_int64(numpy_int64):
+  return AsIs(numpy_int64)
+
+register_adapter(numpy.float64, adapt_numpy_float64)
+register_adapter(numpy.int64, adapt_numpy_int64)
 
 # Create the schema for the table
 heart_schema = '''
@@ -109,27 +113,67 @@ CREATE TABLE IF NOT EXISTS reference (
 '''
 
 # Execute the table schemata queries
-# cursor.execute(heart_schema)
-# cursor.execute(economy_schema)
-# cursor.execute(housing_schema)
-# cursor.execute(job_schema)
-# cursor.execute(location_schema)
-# cursor.execute(people_schema)
-# cursor.execute(reference_schema)
+cursor.execute(heart_schema)
+cursor.execute(economy_schema)
+cursor.execute(housing_schema)
+cursor.execute(job_schema)
+cursor.execute(location_schema)
+cursor.execute(people_schema)
+cursor.execute(reference_schema)
 
-# df['Value'] = df['Value'].astype('float64')
-
-# Turn the Dataframe rows into iterable tuples
-# rows_to_insert = list(df.to_records(index=False))
+# Turn the Dataframes rows into iterable tuples
+heart_values = list(heart.to_records(index=False))
+economy_values = list(economy.to_records(index=False))
+housing_values = list(housing.to_records(index=False))
+job_values = list(job.to_records(index=False))
+location_values = list(location.to_records(index=False))
+people_values = list(people.to_records(index=False))
+# reference_values = list(reference.to_records(index=False))
 
 # Insert the data into PostgreSQL Database
-table_insert = '''
+heart_insert = '''
 INSERT INTO heart_disease
-    (Values, county, state, city) VALUES %s
+    (id, scaled_heart_disease_deaths, normalized_heart_disease) VALUES %s
 '''
 
-# Execute the table insert query with list of tuples
-# execute_values(cursor, table_insert, rows_to_insert)
+economy_insert = '''
+INSERT INTO economy
+    (id, Median_Income, per_capita_Income, Percent_below_Poverty) VALUES %s
+'''
+
+housing_insert = '''
+INSERT INTO housing
+    (id, Median_House_Value, Median_Rent, Cost_of_Living_Index, Property_taxes) VALUES %s
+'''
+
+job_insert = '''
+INSERT INTO job
+    (id, Unemployment_rate, Most_Common_Industries, Average_Commute_Time) VALUES %s
+'''
+
+location_insert = '''
+INSERT INTO location
+    (id, Latitude, Longitude) VALUES %s
+'''
+
+people_insert = '''
+INSERT INTO people
+    (id, Median_Age, population, population_change, Population_Density, popden_norm) VALUES %s
+'''
+
+reference_insert = '''
+INSERT INTO reference
+    (id, code, fips, county, City_Name) VALUES %s
+'''
+
+# Execute the insert queries with list of tuples
+execute_values(cursor, heart_insert, heart_values)
+execute_values(cursor, economy_insert, economy_values)
+execute_values(cursor, housing_insert, housing_values)
+execute_values(cursor, job_insert, job_values)
+execute_values(cursor, location_insert, location_values)
+execute_values(cursor, people_insert, people_values)
+# execute_values(cursor, reference_insert, reference_values)
 
 # Commit changes to the Postgres instance
-# connection.commit()
+connection.commit()
