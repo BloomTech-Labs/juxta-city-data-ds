@@ -15,7 +15,7 @@ DB_HOST = os.getenv("DB_HOST")
 DB_PASS = os.getenv("DB_PASS")
 DB_USER = os.getenv("DB_USER")
 
-# Read in the csv from GitHub (or from parallel directory)
+# Read in the CSV files from GitHub (https://github.com/Lambda-School-Labs/juxta-city-data-ds/tree/heart-disease-data/useful_datasets)
 heart = pd.read_csv('https://raw.githubusercontent.com/Lambda-School-Labs/juxta-city-data-ds/heart-disease-data/useful_datasets/heart_data.csv')
 economy = pd.read_csv('https://raw.githubusercontent.com/Lambda-School-Labs/juxta-city-data-ds/heart-disease-data/useful_datasets/economy_data.csv')
 housing = pd.read_csv('https://raw.githubusercontent.com/Lambda-School-Labs/juxta-city-data-ds/heart-disease-data/useful_datasets/housing_data.csv')
