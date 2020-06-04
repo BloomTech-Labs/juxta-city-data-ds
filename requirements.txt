@@ -1,0 +1,13 @@
+seaborn
+flask
+flask-cors
+pandas
+numpy
+requests
+bs4
+scipy
+psycopg2-binary
+python-dotenv
+ipykernel
+pytest
+urllib3
