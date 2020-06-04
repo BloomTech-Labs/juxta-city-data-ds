@@ -20,17 +20,21 @@ reference = pd.read_csv('./useful_datasets/reference.csv')
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return render_template('homepage.html')
+
 
 @app.route("/about")
 def about():
     return render_template('about.html')
 
+
 @app.route("/team")
 def team():
     return render_template('team.html')
+
 
 @app.route("/data", methods=['GET', 'POST'])
 def heart_disease():
@@ -38,7 +42,8 @@ def heart_disease():
     name = heart[heart['state'] == state]
     output = name.to_dict('records')
     county = [output[i]['county'] for i in list(range(len(output)))]
-    stats = [output[i]['Heart Disease Value'] for i in list(range(len(output)))]
+    stats = [output[i]['Heart Disease Value'] for
+             i in list(range(len(output)))]
     return jsonify(county, stats)
 
 # TODO

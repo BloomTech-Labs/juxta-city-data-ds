@@ -25,16 +25,21 @@ people = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/r
 reference = pd.read_csv('https://github.com/Lambda-School-Labs/juxta-city-data-ds/raw/heart-disease-data/useful_datasets/reference.csv')
 
 # Connect to PostgreSQL Database
-connection = psycopg2.connect(database=DB_NAME, user=DB_USER, 
+connection = psycopg2.connect(database=DB_NAME, user=DB_USER,
                               password=DB_PASS, host=DB_HOST, port="5432")
 cursor = connection.cursor()
 
 # This block of code is needed so psycopg2 can register numpy types
 # Source: https://rehalcon.blogspot.com/2010/03/sqlalchemy-programmingerror-cant-adapt.html
+
+
 def adapt_numpy_float64(numpy_float64):
-  return AsIs(numpy_float64)
+    return AsIs(numpy_float64)
+
+
 def adapt_numpy_int64(numpy_int64):
-  return AsIs(numpy_int64)
+    return AsIs(numpy_int64)
+
 
 register_adapter(numpy.float64, adapt_numpy_float64)
 register_adapter(numpy.int64, adapt_numpy_int64)
