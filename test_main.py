@@ -17,9 +17,8 @@ cursor = connection.cursor()
 
 heart = pd.read_csv('./useful_datasets/heart_data.csv')
 
-class BasicTest(unittest.TestCase):
-
-    def heartQuery_test(self):
+class SQLTestCase(unittest.TestCase):
+    def test_heartQuery(self):
         query = "SELECT COUNT(*) FROM heart_disease;"
         cursor.execute(query)
         result = cursor.fetchone()[0]

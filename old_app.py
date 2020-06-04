@@ -2,11 +2,11 @@ from flask import Flask, jsonify, request, json
 from flask_cors import CORS
 import pandas as pd
 
-df = pd.read_csv('./final_0427.csv')
-photos = pd.read_csv('./photos_big.csv')
+df = pd.read_csv('./extra_datasets/final_0427.csv')
+photos = pd.read_csv('./extra_datasets/photos_big.csv')
 
 # JUXTA 2.0 Heart Disease data
-heart_disease = pd.read_csv('./city_county_state.csv')
+heart_disease = pd.read_csv('./extra_datasets/city_county_state.csv')
 
 
 app = Flask(__name__)
