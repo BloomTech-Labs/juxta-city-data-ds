@@ -4,6 +4,7 @@ import pandas as pd
 
 df = pd.read_csv('./final_0427.csv')
 photos = pd.read_csv('./photos_big.csv')
+heart_health = pd.read_csv('./heartDisease_data_9001.csv')
 
 app = Flask(__name__)
 CORS(app)
@@ -63,6 +64,8 @@ def desc_and_livability():
         drive = request.args['average_commute']
         global aqi
         aqi = request.args['air_quality']
+        global heart_health
+        heart_health = request.args['Heart Disease Value']
 
         state = list(state.split(', '))
         pop = int(pop)
@@ -74,6 +77,7 @@ def desc_and_livability():
         col = int(col)
         drive = int(drive)
         aqi = int(aqi)
+        heart_health = int(heart_health)
 
         def filter_dfs():
             # Create "states" dataframe
@@ -133,12 +137,17 @@ def desc_and_livability():
                 nine = eight[eight['air'] == aqi]
             else:
                 nine = eight
+            
+            if heart_health != 0:
+                ten = nine[nine['Heart Disease Value'] == heart_health]
+            else:
+                ten = nine
 
             # Create list of dataframes for use in case of no Top 5
-            dataframes = [one, two, three, four, five, six, seven, eight, nine]
+            dataframes = [one, two, three, four, five, six, seven, eight, nine, ten]
 
             # Merge dataframes to get fully filtered result
-            all = pd.merge(nine, states, on='city', how='inner')
+            all = pd.merge(ten, states, on='city', how='inner')
 
             # Sort by livability score and convert to a dictionary
             sort = all.sort_values(by='LivabilityScore_y', ascending=False)
@@ -156,7 +165,7 @@ def desc_and_livability():
         def generate_cities():
             # Check that precise matches are available. If not, get imprecise matches.
             shapes = []
-            variables = [pop, pop_ch, med_age, hdti, rti, pop_dense, col, drive, aqi]
+            variables = [pop, pop_ch, med_age, hdti, rti, pop_dense, col, drive, aqi, heart_health]
 
             output, dataframes = filter_dfs()
 
@@ -196,6 +205,8 @@ def desc_and_livability():
                 drive = something[7]
                 global aqi
                 aqi = something[8]
+                global heart_health
+                heart_health = something[9]
 
                 # Run generate_cities again with updated variable values
                 full_output = generate_cities()
@@ -266,6 +277,9 @@ def desc_and_livability():
         rti = data['RTI']
         drive = data['Average_Commute_Time']
 
+        # Heart Disease Value
+        heart_health = data['Heart Disease Value']
+
         # When relative words are needed
         if change < 0:
             growth = 'decrease'
@@ -293,6 +307,7 @@ def desc_and_livability():
         copy['economy_desc'] = f'In {name}, the median household income is ${houseinc}. This means that, per person in the city, the average annual income is ${capitainc}. {poverty}% of people live below the poverty line. The most common industries are the following: {industry}.'
         copy['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! Last year, there were {cold} cold days, {hot} hot days, and {rain} rainy days.'
         copy['living_cost_desc'] = f"On a national scale, {name}'s cost of living is relatively {cli_rel}, with a score of {cli}. The median home value is ${house}, with a housing debt to income ratio of {hdti}. That includes the cost of property taxes, which is ${tax} on average. If you're a renter, you can expect a median cost of ${rent}, and the rent to income ratio is {rti}. Last but not least to consider, the average commute time is {drive} minutes."
+        copy['Heart Disease Value'] = [f'In {name}, there are {heart_health} cases of Heart Disease per 100,000 people.']
 
         output2 = copy.to_dict('records')
         descriptions = output2[0]
@@ -341,6 +356,9 @@ def all_data():
     rti = data['RTI']
     drive = data['Average_Commute_Time']
 
+     # Heart Disease Value
+    heart_health = data['Heart Disease Value']
+
     # When relative words are needed
     if change < 0:
         growth = 'decrease'
@@ -364,7 +382,8 @@ def all_data():
     data['economy_desc'] = f'In {name}, the median household income is ${houseinc}. This means that, per person in the city, the average annual income is ${capitainc}. {poverty}% of people live below the poverty line. The most common industries are the following: {industry}.'
     data['climate_desc'] = f'{name} has an air quality score of {aqi} - remember, lower is better! Last year, there were {cold} cold days, {hot} hot days, and {rain} rainy days.'
     data['living_cost_desc'] = f"On a national scale, {name}'s cost of living is relatively {cli_rel}, with a score of {cli}. The median home value is ${house}, with a housing debt to income ratio of {hdti}. That includes the cost of property taxes, which is ${tax} on average. If you're a renter, you can expect a median cost of ${rent}, and the rent to income ratio is {rti}. Last but not least to consider, the average commute time is {drive} minutes."
-
+    data['Heart Disease Value'] = [f'In {name}, there are {heart_health} cases of Heart Disease per 100,000 people.']
+    
     everything = data
 
     return jsonify(everything)
