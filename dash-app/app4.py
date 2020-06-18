@@ -7,6 +7,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 from dash.dependencies import Input, Output, State
+import requests, base64
 import cufflinks as cf
 
 # Initialize app
@@ -82,7 +83,7 @@ app.layout = html.Div(
         html.Div(
             id="header",
             children=[
-                #html.Img(id="logo", src=app.get_asset_url("dash-logo.png")),
+                #html.Img(id="logo", src=app.get_asset_url("find your city 18.png")),
                 html.H4(children="Health problems in the United States"),
                 html.P(
                     id="description",
@@ -108,7 +109,7 @@ app.layout = html.Div(
                                         {"label": year, 'value': year}
                                         for year in YEARS
                                     ],
-                                    #value=[2018,2019],
+                                    value=2018,
                                     id="year-select",
                                     multi=False,
                                 ),
