@@ -1,1 +1,12 @@
+# Editors
+.idea
+.vscode
+
+# Bytecode (Consider setting PYTHONDONTWRITEBYTECODE=1 in your development environment)
+__pycache__
+.pyc
+
+# Jupyter
+.ipynb_checkpoints
+
 .env
