@@ -86,7 +86,7 @@ app.layout = html.Div(
         html.Div(
             id="header",
             children=[
-                #html.Img(id="logo", src=app.get_asset_url("find your city 18.png")),
+                html.Img(id="logo", src="https://i.ibb.co/XFbXzgH/find-your-city-3.png"),
                 html.H4(children="Health problems in the United States"),
                 html.P(
                     id="description",
@@ -326,7 +326,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
         fig_layout = fig["layout"]
         fig_data = fig["data"]
 
-        fig_data[0]["text"] = heart_disease_values#.values.tolist()
+        fig_data[0]["text"] = heart_disease_values.values.tolist()
         fig_data[0]["marker"]["color"] = "#2cfec1"
         fig_data[0]["marker"]["opacity"] = 1
         fig_data[0]["marker"]["line"]["width"] = 0
@@ -348,7 +348,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
 
     fig = dff.iplot(
         kind="area",
-        x="County",
+        x="Year",
         y="Heart Disease Value",
         text="County",
         categories="County",
