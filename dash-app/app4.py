@@ -254,7 +254,7 @@ def display_map(year, figure):
         dragmode="lasso",
     )
 
-    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/geojson-counties-fips.json"
+    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/us-counties.json"
     for bin in BINS:
         geo_layer = dict(
             sourcetype="geojson",
@@ -299,15 +299,16 @@ def display_selected_data(selectedData, chart_dropdown, year):
             ),
         )
     pts = selectedData["points"]
-    fips = [str(pt["text"].split("<br>")[-1]) for pt in pts]
-    for i in range(len(fips)):
-        if len(fips[i]) == 4:
-            fips[i] = "0" + fips[i]
+    #fips = [str(pt["text"].split("<br>")[-1]) for pt in pts]
+    fips = [str(pt["text"].split("<br>")) for pt in pts]
+    # for i in range(len(fips)):
+    #     if len(fips[i]) == 4:
+    #         fips[i] = "0" + fips[i]
     dff = df_full_data[df_full_data["County"].isin(fips)]
     dff = dff.sort_values("Year")
 
-    regex_pat = re.compile(r"Unreliable", flags=re.IGNORECASE)
-    dff["Heart Disease Value"] = dff["Heart Disease Value"].replace(regex_pat, 0)
+    # regex_pat = re.compile(r"Unreliable", flags=re.IGNORECASE)
+    # dff["Heart Disease Value"] = dff["Heart Disease Value"].replace(regex_pat, 0)
 
     if chart_dropdown != "Heart Disease Value":
         title = "Heart Disease Value"
@@ -325,7 +326,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
         fig_layout = fig["layout"]
         fig_data = fig["data"]
 
-        fig_data[0]["text"] = heart_disease_values.values.tolist()
+        fig_data[0]["text"] = heart_disease_values#.values.tolist()
         fig_data[0]["marker"]["color"] = "#2cfec1"
         fig_data[0]["marker"]["opacity"] = 1
         fig_data[0]["marker"]["line"]["width"] = 0
@@ -347,7 +348,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
 
     fig = dff.iplot(
         kind="area",
-        x="Year",
+        x="County",
         y="Heart Disease Value",
         text="County",
         categories="County",
@@ -381,7 +382,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
 
     # See plot.ly/python/reference
     fig_layout["yaxis"]["title"] = "Disease per county"
-    fig_layout["xaxis"]["title"] = ""
+    fig_layout["xaxis"]["title"] = "Year"
     fig_layout["yaxis"]["fixedrange"] = True
     fig_layout["xaxis"]["fixedrange"] = False
     fig_layout["hovermode"] = "closest"
@@ -396,7 +397,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
     fig_layout["xaxis"]["gridcolor"] = "#5b5b5b"
     fig_layout["yaxis"]["gridcolor"] = "#5b5b5b"
 
-    if len(fips) > 500:
+    if len(fips) > 100:
         fig["layout"][
             "title"
         ] = "Disease per county per year"
