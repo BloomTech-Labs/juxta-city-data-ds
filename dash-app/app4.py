@@ -27,16 +27,16 @@ server = app.server
 APP_PATH = str(pathlib.Path(__file__).parent.resolve())
 
 df_lat_lon = pd.read_csv(
-    os.path.join(APP_PATH, os.path.join("data", "heartDisease15.csv"))
+    os.path.join(APP_PATH, os.path.join("data", "heartDisease16.csv"))
 )
 df_lat_lon["Heart Disease Value"] = df_lat_lon["Heart Disease Value"].apply(lambda x: str(x).zfill(5))
 
 df_full_data = pd.read_csv(
     os.path.join(
-        APP_PATH, os.path.join("data", "heartDisease15.csv")
+        APP_PATH, os.path.join("data", "heartDisease16.csv")
     )
 )
-df_full_data["County Code"] = df_full_data["County Code"].apply(
+df_full_data["State"] = df_full_data["State"].apply(
     lambda x: str(x).zfill(5)
 )
 df_full_data["County"] = (
@@ -108,12 +108,12 @@ app.layout = html.Div(
                                     children="Select a year",
                                 ),
                                 dcc.Dropdown(
+                                    id="year-select",
                                     options=[
                                         {"label": year, 'value': year}
                                         for year in YEARS
                                     ],
                                     value=2018,
-                                    id="year-select",
                                     multi=False,
                                 ),
                             ],
@@ -206,7 +206,7 @@ def display_map(year, figure):
         dict(
             showarrow=False,
             align="right",
-            text="<b>Age-adjusted death rate<br>per county per year</b>",
+            text="<b>Values per 100,000</b>",
             font=dict(color="#2cfec1"),
             bgcolor="#1f2630",
             x=0.95,
