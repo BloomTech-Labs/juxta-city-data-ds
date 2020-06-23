@@ -10,6 +10,8 @@ from dash.dependencies import Input, Output, State
 import requests, base64
 import cufflinks as cf
 
+import json
+
 # Initialize app
 
 app = dash.Dash(
@@ -34,11 +36,11 @@ df_full_data = pd.read_csv(
         APP_PATH, os.path.join("data", "heartDisease15.csv")
     )
 )
-df_full_data["State"] = df_full_data["State"].apply(
+df_full_data["County Code"] = df_full_data["County Code"].apply(
     lambda x: str(x).zfill(5)
 )
 df_full_data["County"] = (
- df_full_data["Unnamed: 0"].map(str) + ", " + df_full_data.County.map(str)
+ df_full_data["County"].map(str) + ", " + df_full_data.County.map(str)
 )
 
 YEARS = [2018,2019]
@@ -72,7 +74,8 @@ DEFAULT_COLORSCALE = [
 
 DEFAULT_OPACITY = 0.8
 
-mapbox_access_token = "pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNrOWJqb2F4djBnMjEzbG50amg0dnJieG4ifQ.Zme1-Uzoi75IaFbieBDl3A"
+mapbox_access_token = "pk.eyJ1IjoicGVkcm9lc2NvYmVkb2IiLCJhIjoiY2tibG4yeTMyMDlxNzJzbjhtNWRxdnR4MSJ9.Oldsna3sT8yMl8u8QK7xaQ"
+#mapbox_style = "mapbox://styles/pedroescobedob/ckblnkcbo0lv81ipamqba19yr"
 mapbox_style = "mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
 
 # App layout
@@ -157,7 +160,7 @@ app.layout = html.Div(
                                     "value": "Heart Disease Value",
                                 },
                             ],
-                            value="show_death_rate_single_year",
+                            value="Heart Disease Value",
                             id="chart-dropdown",
                         ),
                         dcc.Graph(
@@ -251,7 +254,7 @@ def display_map(year, figure):
         dragmode="lasso",
     )
 
-    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/"
+    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/geojson-counties-fips.json"
     for bin in BINS:
         geo_layer = dict(
             sourcetype="geojson",
@@ -377,7 +380,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
     fig_layout = fig["layout"]
 
     # See plot.ly/python/reference
-    fig_layout["yaxis"]["title"] = "Age-adjusted disease per county"
+    fig_layout["yaxis"]["title"] = "Disease per county"
     fig_layout["xaxis"]["title"] = ""
     fig_layout["yaxis"]["fixedrange"] = True
     fig_layout["xaxis"]["fixedrange"] = False
