@@ -27,9 +27,9 @@ server = app.server
 APP_PATH = str(pathlib.Path(__file__).parent.resolve())
 
 df_lat_lon = pd.read_csv(
-    os.path.join(APP_PATH, os.path.join("data", "heartDisease16.csv"))
+    os.path.join(APP_PATH, os.path.join("data", "lat_lon_counties.csv"))
 )
-df_lat_lon["Heart Disease Value"] = df_lat_lon["Heart Disease Value"].apply(lambda x: str(x).zfill(5))
+df_lat_lon["FIPS "] = df_lat_lon["FIPS "].apply(lambda x: str(x).zfill(5))
 
 df_full_data = pd.read_csv(
     os.path.join(
@@ -40,17 +40,29 @@ df_full_data["State"] = df_full_data["State"].apply(
     lambda x: str(x).zfill(5)
 )
 df_full_data["County"] = (
+#df_full_data.County.map(str)
  df_full_data["County"].map(str) + ", " + df_full_data.County.map(str)
 )
 
 YEARS = [2018,2019]
 
 BINS = [
-    "94-150",
-    "150.1-200",
-    "200.1-250",
-    "250.1-299.99",
-    ">300",
+    "0-94",
+    "94.1-100",
+    "100.1-120",
+    "120.1-140",
+    "141.1-160",
+    "160.1-180",
+    "181.1-200",
+    "200.1-220",
+    "220.1-240",
+    "240.1-260",
+    "260.1-280",
+    "280.1-290",
+    "290.1-300",
+    "300.1-310",
+    "310.1-330",
+    ">330.1",
 ]
 
 DEFAULT_COLORSCALE = [
@@ -75,18 +87,20 @@ DEFAULT_COLORSCALE = [
 DEFAULT_OPACITY = 0.8
 
 mapbox_access_token = "pk.eyJ1IjoicGVkcm9lc2NvYmVkb2IiLCJhIjoiY2tibG4yeTMyMDlxNzJzbjhtNWRxdnR4MSJ9.Oldsna3sT8yMl8u8QK7xaQ"
-#mapbox_style = "mapbox://styles/pedroescobedob/ckblnkcbo0lv81ipamqba19yr"
-mapbox_style = "mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
+mapbox_style = "mapbox://styles/pedroescobedob/ckblnkcbo0lv81ipamqba19yr"
+#mapbox_style = "mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
 
 # App layout
 
 app.layout = html.Div(
     id="root",
     children=[
+
         html.Div(
             id="header",
+            #children=html.Img(id="logo", src="https://i.ibb.co/cXgFrRR/find-your-city-18.png",width="50%",height="100%")
             children=[
-                html.Img(id="logo", src="https://i.ibb.co/XFbXzgH/find-your-city-3.png"),
+                html.Img(id="logo", src="https://i.ibb.co/cXgFrRR/find-your-city-18.png", width="50%"),
                 html.H4(children="Health problems in the United States"),
                 html.P(
                     id="description",
@@ -193,7 +207,7 @@ def display_map(year, figure):
 
     data = [
         dict(
-            lat=df_lat_lon["Latitude"],
+            lat=df_lat_lon["Latitude "],
             lon=df_lat_lon["Longitude"],
             text=df_lat_lon["Hover"],
             type="scattermapbox",
@@ -254,7 +268,7 @@ def display_map(year, figure):
         dragmode="lasso",
     )
 
-    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/us-counties.json"
+    base_url = "https://raw.githubusercontent.com/jackparmer/mapbox-counties/master/"
     for bin in BINS:
         geo_layer = dict(
             sourcetype="geojson",
@@ -299,16 +313,16 @@ def display_selected_data(selectedData, chart_dropdown, year):
             ),
         )
     pts = selectedData["points"]
-    #fips = [str(pt["text"].split("<br>")[-1]) for pt in pts]
-    fips = [str(pt["text"].split("<br>")) for pt in pts]
-    # for i in range(len(fips)):
-    #     if len(fips[i]) == 4:
-    #         fips[i] = "0" + fips[i]
-    dff = df_full_data[df_full_data["County"].isin(fips)]
+    fips = [str(pt["text"].split("<br>")[-1]) for pt in pts]
+    #fips = [str(pt["text"].split("<br>")) for pt in pts]
+    for i in range(len(fips)):
+        if len(fips[i]) == 4:
+            fips[i] = "0" + fips[i]
+    dff = df_full_data[df_full_data["State"].isin(fips)]
     dff = dff.sort_values("Year")
 
-    # regex_pat = re.compile(r"Unreliable", flags=re.IGNORECASE)
-    # dff["Heart Disease Value"] = dff["Heart Disease Value"].replace(regex_pat, 0)
+    regex_pat = re.compile(r"Unreliable", flags=re.IGNORECASE)
+    dff["Heart Disease Value"] = dff["Heart Disease Value"].replace(regex_pat, 0)
 
     if chart_dropdown != "Heart Disease Value":
         title = "Heart Disease Value"
@@ -382,7 +396,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
 
     # See plot.ly/python/reference
     fig_layout["yaxis"]["title"] = "Disease per county"
-    fig_layout["xaxis"]["title"] = "Year"
+    fig_layout["xaxis"]["title"] = "Population"
     fig_layout["yaxis"]["fixedrange"] = True
     fig_layout["xaxis"]["fixedrange"] = False
     fig_layout["hovermode"] = "closest"
