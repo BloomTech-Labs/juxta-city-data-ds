@@ -303,7 +303,7 @@ def update_map_title(year):
 def display_selected_data(selectedData, chart_dropdown, year):
     if selectedData is None:
         return dict(
-            data=[dict(x=0, y=0)],
+            data=[dict(x=df_full_data['County'], y=df_full_data['Heart Disease Value'])],
             layout=dict(
                 title="Click-drag on the map to select counties",
                 paper_bgcolor="#1f2630",
