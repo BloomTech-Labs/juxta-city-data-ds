@@ -11,3 +11,4 @@ python-dotenv
 ipykernel
 pytest
 urllib3
+gunicorn
