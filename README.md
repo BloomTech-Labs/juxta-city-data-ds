@@ -21,6 +21,65 @@ You can find the project at [findur.city](http://www.findur.city/).
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob)           |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedro-escobedo-39a23615b/) |
 
+## Directory Structure
+
+```
+|-- Twitter_stream_app
+|   |-- app
+|   |   |-- api.py
+|   |   |-- app.py
+|   |   |-- slistener.py
+|   |   └-- streamer.py
+|   |
+|   |-- Dockerfile
+|   |-- requirements.txt
+|   └-- two.sh
+|
+|-- dash-app                        <- Plotly Dash app for visualization
+|   └-- Choropleth map
+|
+|-- defunct_notebooks               <- Notebooks no longer being used
+|
+|-- notebooks_in_use
+|   |-- extraneous_datasets         <- Datasets needed for reproducability
+|   |   └-- ...
+|   |   
+|   |-- Close Matches - Anika.ipynb
+|   |-- Exploration and Testing - Anika.ipynb
+|   |-- Weather - Anika.ipynb
+|   |-- heart_disease_cdc_exploration.ipynb   
+|   └-- heart_disease_split.ipynb
+|
+|-- templates                       <- Templates used for app.py file
+|   |-- about.html
+|   |-- homepage.html
+|   └-- team.html
+|
+|-- useful_datasets                 <- Datasets used in app.py v.2.0
+|   |-- economy_data.csv
+|   |-- heart_data.csv
+|   |-- housing_data.csv
+|   |-- job_data.csv
+|   |-- location_data.csv
+|   |-- people_stats_data.csv
+|   |-- plotly_exploration.ipynb    <- Exploring data visualization with Plotly
+|   |-- reference.csv
+|   └-- reference_data.csv (*DEFUNCT*)
+|
+|-- FindUrCity-Entity.pdf           <- Entity-Relationship diagram for PostgreSQL
+|-- LICENSE
+|-- Procfile
+|-- README.md
+|-- __init__.py (*DEFUNCT*)
+|-- app.py
+|-- city_scraping.py
+|-- code_of_conduct.md
+|-- pg_insert.py
+|-- pull_request_template.md
+|-- requirements.txt
+└-- test_main.py
+```
+
 ## Project Overview
 
 
