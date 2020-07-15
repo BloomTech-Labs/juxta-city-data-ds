@@ -58,16 +58,16 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   ├─── tests
 │   │   └─── test_main.py
 │   │
-│   ├─── Twitter_stream_app
-│   │   ├─── app
-│   │   │   ├─── api.py
-│   │   │   ├─── app.py
-│   │   │   ├─── slistener.py
-│   │   │   └─── streamer.py
-│   │   │
-│   │   ├─── Dockerfile
-│   │   ├─── requirements.txt
-│   │   └─── two.sh
+│   └─── Twitter_stream_app
+│       ├─── app
+│       │   ├─── api.py
+│       │   ├─── app.py
+│       │   ├─── slistener.py
+│       │   └─── streamer.py
+│       │
+│       ├─── Dockerfile
+│       ├─── requirements.txt
+│       └─── two.sh
 │   
 ├─── labspt11_documents
 │   ├─── code_of_conduct.md
