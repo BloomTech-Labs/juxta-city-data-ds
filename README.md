@@ -6,7 +6,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ### Version 1.0
 
-|                                       [Anika Zolman-Nacey](https://github.com/AnikaZN)                                        |                                       [Karthik Mahendra](https://github.com/kmk028)                                        |                                       [Raul Harrington, Jr.](https://github.com/cicbeast)                                        |
+[Anika Zolman-Nacey](https://github.com/AnikaZN)                               |[Karthik Mahendra](https://github.com/kmk028)                                        |                                       [Raul Harrington, Jr.](https://github.com/cicbeast)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ24AE9UN-a7a80435887f-512" width = "200" />](https://github.com/AnikaZN)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-U7ZHKHH1C-89bec4c1baf5-512" width = "200" />](https://github.com/kmk028)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHZ6UE2G4-e86f386a7ac0-512" width = "200" />](https://github.com/cicbeast)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/AnikaZN)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kmk028)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cicbeast)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
@@ -15,70 +15,72 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ### Version 2.0
 
-|                                       [Arturo Obregon](https://github.com/artbrgn)                                        |                                       [Ashley Gaskins](https://github.com/ash827)                                        |                                       [James Barciz](https://github.com/JamesBarciz)                                     |                                       [Pedro Escobedo](https://github.com/pedroescobedob)                                        |
+[Arturo Obregon](https://github.com/artbrgn)|[Ashley Gaskins](https://github.com/ash827)|[James Barciz](https://github.com/JamesBarciz)[Pedro Escobedo](https://github.com/pedroescobedob)
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width = "200" height="200" />](https://github.com/artbrgn)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width = "200" />](https://github.com/ash827)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width = "200" />](https://github.com/JamesBarciz)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JPZERLK-84b582210ffb-512" width = "200" />](https://github.com/pedroescobedob)                       |
+|                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width = "200" height="200" />](https://github.com/artbrgn)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width = "200" />](https://github.com/ash827)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width = "200" />](https://github.com/JamesBarciz)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JPZERLK-9bd0995e4713-512" width = "200" />](https://github.com/pedroescobedob)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob)           |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedro-escobedo-39a23615b/) |
 
 ## Directory Structure
+```
+├─── findurcity
+│   ├─── notebooks
+│   │   ├─── Close Matches - Anika.ipynb
+│   │   ├─── Exploration and Testing - Anika.ipynb
+│   │   ├─── heart_disease_cdc_exploration.ipynb
+│   │   ├─── heart_disease_data_split.ipynb
+│   │   ├─── plotly_exploration.ipynb
+│   │   └─── Weather - Anika.ipynb
+│   │   
+│   ├─── src
+│   │   ├─── database
+│   │   │   ├─── city_scraping.py
+│   │   │   ├─── FindUrCity-Entity_2.pdf
+│   │   │   └─── pg_insert.py
+│   │   │
+│   │   ├─── datasets
+│   │   │   ├─── economy_data.csv
+│   │   │   ├─── heart_data.csv 
+│   │   │   ├─── housing_data.csv 
+│   │   │   ├─── job_data.csv 
+│   │   │   ├─── location_data.csv 
+│   │   │   ├─── people_stats_data.csv 
+│   │   │   └─── referenes.csv
+│   │   │
+│   │   └─── extraneous_datasets
+│   │       └─── ...23 misc datasets...
+│   │   
+│   ├─── templates
+│   │   ├─── about.html
+│   │   ├─── homepage.html
+│   │   └─── team.html
+│   │
+│   ├─── tests
+│   │   └─── test_main.py
+│   │
+│   ├─── Twitter_stream_app
+│   │   ├─── app
+│   │   │   ├─── api.py
+│   │   │   ├─── app.py
+│   │   │   ├─── slistener.py
+│   │   │   └─── streamer.py
+│   │   │
+│   │   ├─── Dockerfile
+│   │   ├─── requirements.txt
+│   │   └─── two.sh
+│   
+├─── labspt11_documents
+│   ├─── code_of_conduct.md
+│   └─── pull_request_template.md
+│
+├─── .gitignore
+├─── LICENSE
+├─── Procfile
+├─── README.md
+└─── requirements.txt
+```
 
-```
-|-- Twitter_stream_app
-|   |-- app
-|   |   |-- api.py
-|   |   |-- app.py
-|   |   |-- slistener.py
-|   |   └-- streamer.py
-|   |
-|   |-- Dockerfile
-|   |-- requirements.txt
-|   └-- two.sh
-|
-|-- dash-app                        <- Plotly Dash app for visualization
-|   └-- Choropleth map
-|
-|-- defunct_notebooks               <- Notebooks no longer being used
-|
-|-- notebooks_in_use
-|   |-- extraneous_datasets         <- Datasets needed for reproducability
-|   |   └-- ...
-|   |   
-|   |-- Close Matches - Anika.ipynb
-|   |-- Exploration and Testing - Anika.ipynb
-|   |-- Weather - Anika.ipynb
-|   |-- heart_disease_cdc_exploration.ipynb   
-|   └-- heart_disease_split.ipynb
-|
-|-- templates                       <- Templates used for app.py file
-|   |-- about.html
-|   |-- homepage.html
-|   └-- team.html
-|
-|-- useful_datasets                 <- Datasets used in app.py v.2.0
-|   |-- economy_data.csv
-|   |-- heart_data.csv
-|   |-- housing_data.csv
-|   |-- job_data.csv
-|   |-- location_data.csv
-|   |-- people_stats_data.csv
-|   |-- plotly_exploration.ipynb    <- Exploring data visualization with Plotly
-|   |-- reference.csv
-|   └-- reference_data.csv (*DEFUNCT*)
-|
-|-- FindUrCity-Entity.pdf           <- Entity-Relationship diagram for PostgreSQL
-|-- LICENSE
-|-- Procfile
-|-- README.md
-|-- __init__.py (*DEFUNCT*)
-|-- app.py
-|-- city_scraping.py
-|-- code_of_conduct.md
-|-- pg_insert.py
-|-- pull_request_template.md
-|-- requirements.txt
-└-- test_main.py
-```
+
 
 ## Project Overview
 
