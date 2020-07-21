@@ -26,6 +26,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 ├─── findurcity
 │   ├─── notebooks
 │   │   ├─── Close Matches - Anika.ipynb
+│   │   ├─── covid_exploration.ipynb
 │   │   ├─── Exploration and Testing - Anika.ipynb
 │   │   ├─── heart_disease_cdc_exploration.ipynb
 │   │   ├─── heart_disease_data_split.ipynb
@@ -35,10 +36,12 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   ├─── src
 │   │   ├─── database
 │   │   │   ├─── city_scraping.py
+│   │   │   ├─── covid_to_pg.py
 │   │   │   ├─── FindUrCity-Entity_2.pdf
 │   │   │   └─── pg_insert.py
 │   │   │
 │   │   ├─── datasets
+│   │   │   ├─── covid_data.csv
 │   │   │   ├─── economy_data.csv
 │   │   │   ├─── heart_data.csv 
 │   │   │   ├─── housing_data.csv 
@@ -55,9 +58,6 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   │   ├─── homepage.html
 │   │   └─── team.html
 │   │
-│   ├─── tests
-│   │   └─── test_main.py
-│   │
 │   └─── Twitter_stream_app
 │       ├─── app
 │       │   ├─── api.py
@@ -72,6 +72,13 @@ You can find the project at [findur.city](http://www.findur.city/).
 ├─── labspt11_documents
 │   ├─── code_of_conduct.md
 │   └─── pull_request_template.md
+│
+├─── test
+│   ├── test_data
+│   │   └── test_datasets.py
+│   │
+│   └── test_database
+│       └── test_postgres.py
 │
 ├─── .gitignore
 ├─── LICENSE

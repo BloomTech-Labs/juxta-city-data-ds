@@ -5,16 +5,21 @@ import pandas as pd
 import glob
 import os
 from os import listdir
+from dotenv import load_dotenv
 
-city_df = pd.read_csv('./useful_datasets/reference.csv')
-photos = pd.read_csv('./notebooks_in_use/extraneous_datasets/photos_big.csv')
-economy = pd.read_csv('./useful_datasets/economy_data.csv')
-heart_disease = pd.read_csv('./useful_datasets/heart_data.csv')
-housing = pd.read_csv('./useful_datasets/housing_data.csv')
-jobs = pd.read_csv('./useful_datasets/job_data.csv')
-location = pd.read_csv('./useful_datasets/location_data.csv')
-people_stats = pd.read_csv('./useful_datasets/people_stats_data.csv')
-original = pd.read_csv('./notebooks_in_use/extraneous_datasets/final_0427.csv') 
+load_dotenv()
+
+filepath = os.getenv("repo_filepath")
+
+city_df = pd.read_csv(filepath + 'findurcity/src/datasets/reference.csv')
+photos = pd.read_csv(filepath + 'findurcity/src/extraneous_datasets/photos_big.csv')
+economy = pd.read_csv(filepath + 'findurcity/src/datasets/economy_data.csv')
+heart_disease = pd.read_csv(filepath + 'findurcity/src/datasets/heart_data.csv')
+housing = pd.read_csv(filepath + 'findurcity/src/datasets/housing_data.csv')
+jobs = pd.read_csv(filepath + 'findurcity/src/datasets/job_data.csv')
+location = pd.read_csv(filepath + 'findurcity/src/datasets/location_data.csv')
+people_stats = pd.read_csv(filepath + 'findurcity/src/datasets/people_stats_data.csv')
+original = pd.read_csv(filepath + 'findurcity/src/extraneous_datasets/final_0427.csv') 
 
 app = Flask(__name__)
 CORS(app)
