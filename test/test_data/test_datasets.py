@@ -1,23 +1,35 @@
 import os
 import unittest
 import pandas as pd
+from datetime import date, timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
 
-data_path = os.getenv("repo_filepath") + "findurcity/src/datasets/"
+FILEPATH =  os.getenv("repo_filepath") + "findurcity/src/datasets/"
+
+yesterday = (date.today() - timedelta(days=1)).strftime("%m-%d-%Y")
+
 
 class TestDataShape(unittest.TestCase):
 
     def test_covid(self):
-        covid = pd.read_csv(data_path + "covid_data.csv")
+        covid = pd.read_csv(FILEPATH + f"{yesterday}.csv")
         data = covid.to_records(index=True)
-        self.assertEqual(len(data[0]), 13)
+        self.assertEqual(len(data[0]), 14)
 
     def test_heart(self):
-        heart_disease = pd.read_csv(data_path + "heart_data.csv")
+        heart_disease = pd.read_csv(FILEPATH + "heart_data.csv")
         data = heart_disease.to_records(index=True)
         self.assertEqual(len(data[0]), 4)
+
+
+class TestDataDate(unittest.TestCase):
+
+    def test_CovidDate(self):
+        self.assertEqual(os.path.splitext(FILEPATH + f"{yesterday}.csv")[0][-10:],
+                         yesterday)
+
 
 
 if __name__ == "__main__":
