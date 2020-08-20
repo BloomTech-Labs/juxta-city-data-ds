@@ -5,7 +5,9 @@
 Data was obtained from https://www.city-data.com/ ['Heart Disease'] and from daily updating github repository https://github.com/CSSEGISandData/COVID-19.git ['Covid-19'].
 
 [View the Heart Disease Dash app](https://heartdash-app.herokuapp.com/)
+
 [View the COVID-19 Disease Dash app](https://dashapp-covid19.herokuapp.com)
+
 [View Both apps into one Dash app](https://dash-heartandcovid.herokuapp.com/)
 
 ## Getting Started
