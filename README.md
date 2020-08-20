@@ -1,4 +1,6 @@
-# Find Ur City
+# Find Your City
+
+< img src="https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/dash-app/Both_apps_IntoOne/assets/find%20your%20city%2018.png" width="800">
 
 You can find the project at [findur.city](http://www.findur.city/).
 
