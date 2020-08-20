@@ -15,8 +15,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ### Version 2.0
 
-[Arturo Obregon](https://github.com/artbrgn)|[Ashley Gaskins](https://github.com/ash827)|[James Barciz](https://github.com/JamesBarciz]
-
+[Arturo Obregon](https://github.com/artbrgn)|[Ashley Gaskins](https://github.com/ash827)|[James Barciz](https://github.com/JamesBarciz)
 [Pedro Escobedo](https://github.com/pedroescobedob)
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width = "200" height="200" />](https://github.com/artbrgn)                       |                       [<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width = "200" />](https://github.com/ash827)                       |                       [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width = "200" />](https://github.com/JamesBarciz)                       |                       [<img src="https://ca.slack-edge.com/ESZCHB482-W012JPZERLK-9bd0995e4713-512" width = "200" />](https://github.com/pedroescobedob)                       |                       |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob)           |
