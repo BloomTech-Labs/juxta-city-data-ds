@@ -15,7 +15,8 @@ from datetime import timedelta
 
 import json
 
-# Initialize app
+# INITIALIZE APP
+# ----------------------------------------
 
 app = dash.Dash(
     __name__,
@@ -25,7 +26,8 @@ app = dash.Dash(
 )
 server = app.server
 
-# Load data
+# LOAD DATA
+# ----------------------------------------
 
 APP_PATH = str(pathlib.Path(__file__).parent.resolve())
 
@@ -34,6 +36,7 @@ df_lat_lon = pd.read_csv(
 )
 df_lat_lon["FIPS "] = df_lat_lon["FIPS "].apply(lambda x: str(x).zfill(5))
 
+# LOAD HEART DISEASE DATA
 df_heart_disease = pd.read_csv(
     os.path.join(
         APP_PATH, os.path.join("data", "lat_lonH21.csv")
@@ -42,45 +45,49 @@ df_heart_disease = pd.read_csv(
 df_heart_disease["County Code"] = df_heart_disease["County Code"].apply(
     lambda x: str(x).zfill(5)
 )
+
+# MAP HEART DATA
 df_heart_disease["County"] = (
         df_heart_disease["Unnamed: 0"].map(str) + ", " + df_heart_disease.County.map(str)
 )
 
-yesterday = (date.today() - timedelta(days=1)).strftime("%m-%d-%Y")
-print(yesterday)
-jhu_filepath = f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv'
+# GET THE PREVIOUS DATE
+yesterday = (date.today() - timedelta(days=2)).strftime("%m-%d-%Y")
 
+# LINK TO COVID DATA
+jhu_filepath = f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv'
 df_covid_data = pd.read_csv(jhu_filepath)
-print(df_covid_data.head())
 
 df_covid_data["FIPS"] = df_covid_data["FIPS"].apply(
     lambda x: str(x).zfill(5)
 )
 
-df_covid_data = df_covid_data.rename(columns={'Admin2': 'County', 'Last_Update': 'Year', 'Confirmed': 'Confirmed_cases'})
+# RENAMING COLUMNS
+df_covid_data = df_covid_data.rename(columns={'Admin2': 'County', 'Confirmed': 'Confirmed_cases'})
 df_heart_disease = df_heart_disease.rename(columns={'Heart Disease Value': 'Confirmed_cases'})
 
+# MAP COVID DATA
 df_covid_data["County"] = (
         df_covid_data["County"].map(str) + ", " + df_covid_data.County.map(str)
 )
 
-def remove_last_num(num):
-  return num.strip('"')[:-15]
+# def remove_last_num(num):
+#   return num.strip('"')[:-15]
 
 def remove_last2_num(num):
   return num.strip('"')[:-2]
 
-
-df_covid_data["Year"] = df_covid_data["Year"].apply(remove_last_num)
-print(df_covid_data["Year"].head())
+# MODIFICATIONS IN ORDER FOR APP TO WORK
+df_covid_data["Year"] = 2020
 df_covid_data['Year'] = df_covid_data['Year'].astype(int)
 df_covid_data["County Code"] = df_covid_data["FIPS"].apply(remove_last2_num)
 df_covid_data["County Code"] = df_covid_data["County Code"].replace({'00n': '0'})
 df_covid_data["County Code"] = df_covid_data["County Code"].apply(
     lambda x: str(x).zfill(5)
 )
-print(df_covid_data.head())
-print(df_covid_data.info())
+
+# VALUES FOR THE APP
+# -------------------------------------
 
 YEARS = [2018, 2020]
 
@@ -162,32 +169,14 @@ DEFAULT_COLORSCALE = [
     "#660000",
 ]
 
-# DEFAULT_COLORSCALE = [
-#     "#ffcccc",
-#     "#ffb2b2",
-#     "#ff9999",
-#     "#ff7f7f",
-#     "#ff6666",
-#     "#ff4c4c",
-#     "#ff3232",
-#     "#ff1919",
-#     "#ff0000",
-#     "#ff0000",
-#     "#e50000",
-#     "#cc0000",
-#     "#b20000",
-#     "#990000",
-#     "#7f0000",
-#     "#660000",
-# ]
-
 DEFAULT_OPACITY = 0.8
 
 mapbox_access_token = "pk.eyJ1IjoicGVkcm9lc2NvYmVkb2IiLCJhIjoiY2tibG4yeTMyMDlxNzJzbjhtNWRxdnR4MSJ9.Oldsna3sT8yMl8u8QK7xaQ"
 # mapbox_style = "mapbox://styles/pedroescobedob/ckblnkcbo0lv81ipamqba19yr"
 mapbox_style = "mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
 
-# App layout
+# APP LAYOUT
+# ------------------------------------
 
 app.layout = html.Div(
     id="root",
@@ -302,6 +291,11 @@ app.layout = html.Div(
 )
 
 
+# APP CALLBACKS FOR THE DATA SELECTION
+# ---------------------------------------------
+
+# YEAR SELECTION CALLBACK
+
 @app.callback(
     Output("county-choropleth", "figure"),
     [Input("years-slider", "value")],
@@ -309,9 +303,11 @@ app.layout = html.Div(
 )
 
 def display_map(year, figure):
+    # SETTING UP BIN AND COLOR VALUES FOR THE MAP
     cm = dict(zip(HEART_BINS, DEFAULT_COLORSCALE1))
     cv = dict(zip(COVID_BINS, DEFAULT_COLORSCALE))
 
+    # LATITUDES AND LONGITUDES
     data = [
         dict(
             lat=df_lat_lon["Latitude "],
@@ -322,6 +318,8 @@ def display_map(year, figure):
             marker=dict(size=5, color="white", opacity=0),
         )
     ]
+
+    # DISPLAY BIN VALUES ON MAP ON MAP
     if year == 2018:
         annotations = [
             dict(
@@ -384,6 +382,9 @@ def display_map(year, figure):
                 )
             )
 
+
+    # WHERE THE MAP SHOULD BE DISPLAYED
+
     if "layout" in figure:
         lat = figure["layout"]["mapbox"]["center"]["lat"]
         lon = figure["layout"]["mapbox"]["center"]["lon"]
@@ -406,6 +407,8 @@ def display_map(year, figure):
         annotations=annotations,
         dragmode="lasso",
     )
+
+    # AQUIRE GEOMETRIC SHAPES FOR THE MAP IN ORDER TO PLOT WITH COLOR
 
     if year == 2018:
         base_url = "https://raw.githubusercontent.com/pedroescobedob/mapbox-counties/master/"
@@ -439,12 +442,16 @@ def display_map(year, figure):
     fig = dict(data=data, layout=layout)
     return fig
 
+# DISPLAY YEAR BY SELECTION
+
 @app.callback(Output("heatmap-title", "children"), [Input("years-slider", "value")])
 def update_map_title(year):
     return "Heatmap of diseases in the year {0}".format(
         year
     )
 
+# DISPLAY SELECTED DATA
+# -------------------------------
 
 @app.callback(
     Output("selected-data", "figure"),
@@ -455,6 +462,7 @@ def update_map_title(year):
     ],
 )
 def display_selected_data(selectedData, chart_dropdown, year):
+    # IF THERE IS NOT DATA DISPLAY
     if selectedData is None:
         return dict(
             data=[dict(x=df_heart_disease['County'], y=df_heart_disease['Confirmed_cases'])],
@@ -467,19 +475,21 @@ def display_selected_data(selectedData, chart_dropdown, year):
             ),
         )
 
+    # WORKING WITH SELECTED DATA
+    # -----------------------------
+
     pts = selectedData["points"]
-    print(selectedData)
     fips = [str(pt["text"].split("<br>")[-1]) for pt in pts]
     # fips = [str(pt["text"].split("<br>")) for pt in pts]
     for i in range(len(fips)):
         if len(fips[i]) == 4:
             fips[i] = "0" + fips[i]
+    # DFF = HEART
     dff = df_heart_disease[df_heart_disease["County Code"].isin(fips)]
     dff = dff.sort_values("Year")
+    # DFF2 = COVID
     dff2 = df_covid_data[df_covid_data["County Code"].isin(fips)]
     dff2 = dff2.sort_values("Year")
-    print(dff2.shape)
-    print(dff2.head())
 
     regex_pat = re.compile(r"Unreliable", flags=re.IGNORECASE)
     dff["Confirmed_cases"] = dff["Confirmed_cases"].replace(regex_pat, 0)
@@ -633,7 +643,7 @@ def display_selected_data(selectedData, chart_dropdown, year):
         trace["type"] = "scatter"
         for prop in trace:
             fig["data"][i][prop] = trace[prop]
-###
+#
 
 if __name__ == "__main__":
     app.run_server(debug=True)
