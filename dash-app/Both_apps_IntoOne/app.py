@@ -52,7 +52,7 @@ df_heart_disease["County"] = (
 )
 
 # GET THE PREVIOUS DATE
-yesterday = (date.today() - timedelta(days=1)).strftime("%m-%d-%Y")
+yesterday = (date.today() - timedelta(days=2)).strftime("%m-%d-%Y")
 
 # LINK TO COVID DATA
 jhu_filepath = f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv'
