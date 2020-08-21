@@ -1,4 +1,6 @@
-# Find Ur City
+# Find Your City
+
+<img src="https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/dash-app/Both_apps_IntoOne/assets/find%20your%20city%2018.png" width="700" />
 
 You can find the project at [findur.city](http://www.findur.city/).
 
@@ -14,12 +16,10 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 
 ### Version 2.0
-
-[Arturo Obregon](https://github.com/artbrgn)|[Ashley Gaskins](https://github.com/ash827)|[James Barciz](https://github.com/JamesBarciz)[Pedro Escobedo](https://github.com/pedroescobedob)
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width = "200" height="200" />](https://github.com/artbrgn)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width = "200" />](https://github.com/ash827)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width = "200" />](https://github.com/JamesBarciz)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JPZERLK-9bd0995e4713-512" width = "200" />](https://github.com/pedroescobedob)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob)           |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedro-escobedo-39a23615b/) |
+| [Arturo Obregon](https://github.com/artbrgn) | [Ashley Gaskins](https://github.com/ash827) | [James Barciz](https://github.com/JamesBarciz) | [Pedro Escobedo](https://github.com/pedroescobedob) |
+|------------------------------------------------|---------------------------------------------------|------------------------------------------|-------------------------------------------|
+|<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width="200" />|<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width="200" />|<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width="200" />|<img src="https://avatars3.githubusercontent.com/u/52268232?s=460&u=a0a5b3d59810d9407f436a926bafc10cf052e22f&v=4" width="200" />|
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedroescobedob/)|
 
 ## Directory Structure
 ```
@@ -31,6 +31,8 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   │   ├─── heart_disease_cdc_exploration.ipynb
 │   │   ├─── heart_disease_data_split.ipynb
 │   │   ├─── plotly_exploration.ipynb
+│   │   ├─── COVID_19_County_file.ipynb
+│   │   ├─── heart_disease_dash.ipynb
 │   │   └─── Weather - Anika.ipynb
 │   │   
 │   ├─── src
@@ -52,7 +54,16 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   │   │
 │   │   └─── extraneous_datasets
 │   │       └─── ...23 misc datasets...
-│   │   
+│   │ 
+│   ├─── dash-app
+│   │   ├─── .idea
+│   │   ├─── .ipynb_checkpoints
+│   │   ├─── Mapbox_countiesGeoJson
+│   │   ├─── Both_apps_IntoOne
+│   │   ├─── Covid19_app
+│   │   ├─── HeartDisease_app
+│   │   ├─── README.md
+│   │
 │   ├─── templates
 │   │   ├─── about.html
 │   │   ├─── homepage.html
