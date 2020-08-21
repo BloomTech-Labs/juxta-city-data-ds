@@ -1,4 +1,6 @@
-# Find Ur City
+# Find Your City
+
+<img src="https://github.com/Lambda-School-Labs/juxta-city-data-ds/blob/master/dash-app/Both_apps_IntoOne/assets/find%20your%20city%2018.png" width="700" />
 
 You can find the project at [findur.city](http://www.findur.city/).
 
@@ -29,6 +31,8 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   │   ├─── heart_disease_cdc_exploration.ipynb
 │   │   ├─── heart_disease_data_split.ipynb
 │   │   ├─── plotly_exploration.ipynb
+│   │   ├─── COVID_19_County_file.ipynb
+│   │   ├─── heart_disease_dash.ipynb
 │   │   └─── Weather - Anika.ipynb
 │   │   
 │   ├─── src
@@ -50,7 +54,15 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   │   │
 │   │   └─── extraneous_datasets
 │   │       └─── ...23 misc datasets...
-│   │   
+│   │ 
+│   ├─── dash-app
+│   │   ├─── .idea
+│   │   ├─── .ipynb_checkpoints
+│   │   ├─── Both_apps_IntoOne
+│   │   ├─── Covid19_app
+│   │   ├─── HeartDisease_app
+│   │   ├─── README.md
+│   │
 │   ├─── templates
 │   │   ├─── about.html
 │   │   ├─── homepage.html
