@@ -58,6 +58,7 @@ You can find the project at [findur.city](http://www.findur.city/).
 │   ├─── dash-app
 │   │   ├─── .idea
 │   │   ├─── .ipynb_checkpoints
+│   │   ├─── Mapbox_countiesGeoJson
 │   │   ├─── Both_apps_IntoOne
 │   │   ├─── Covid19_app
 │   │   ├─── HeartDisease_app
