@@ -24,13 +24,5 @@ class TestDataShape(unittest.TestCase):
         self.assertEqual(len(data[0]), 4)
 
 
-class TestDataDate(unittest.TestCase):
-
-    def test_CovidDate(self):
-        self.assertEqual(os.path.splitext(FILEPATH + f"{yesterday}.csv")[0][-10:],
-                         yesterday)
-
-
-
 if __name__ == "__main__":
     unittest.main()

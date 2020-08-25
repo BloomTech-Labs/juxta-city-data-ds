@@ -10,13 +10,14 @@ FILEPATH = os.getenv("repo_filepath") + "findurcity/src/datasets/"
 
 # Grab yesterday's date as MM-DD-YYYY
 
-yesterday = (date.today() - timedelta(days=1)).strftime("%m-%d-%Y")
+yesterday = (date.today() - timedelta(days=2)).strftime("%m-%d-%Y")
 
 # GitHub raw data URL for JHU's COVID-19 repository
 
 jhu_filepath = f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv'
 
 # Base DataFrame for COVID-19 data
+
 
 base_covid = pd.read_csv(jhu_filepath)
 
@@ -42,4 +43,4 @@ covid1 = covid1.fillna(-1)
 covid19_cleaned = covid1[['FIPS', 'County', 'State', 'Lat', 'Lon', 'Confirmed', 'Deaths',
                           'Recovered', 'Active', 'Incidence_Rate', 'Case-Fatality_Ratio', 'Date']]
 
-# covid19_cleaned.to_csv(FILEPATH + f"{yesterday}.csv")
+covid19_cleaned.to_csv(FILEPATH + f"{yesterday}.csv", index=False)
