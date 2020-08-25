@@ -9,6 +9,7 @@ scipy
 psycopg2-binary
 python-dotenv
 ipykernel
+flaskr
 pytest
 urllib3
 gunicorn
