@@ -6,18 +6,23 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ## Contributors
 
+### Labs 11 - Second Product Cycle
+Arturo Obregon | [Github](https://github.com/artbrgn) | [Linkedin](https://www.linkedin.com/in/arturo-obregon/)
+
+Ashley Gaskins | [Github](https://github.com/ash827) | [Linkedin](https://www.linkedin.com/in/ashley-gaskins-17b87474/)
+
+James Barciz | [Github](https://github.com/JamesBarciz) | [Linkedin](https://www.linkedin.com/in/james-barciz-6b440413a/)
+
+Pedro Escobedo | [Github](https://github.com/pedroescobedob) | [Linkedin](https://www.linkedin.com/in/pedroescobedob/)
+
 ### Labs 7 - First Product Cycle
 
 Anika Zolman-Nacey | [Github](https://github.com/AnikaZN)
+
 Karthik Mahendra | [Github](https://github.com/kmk028)
+
 Raul Harrington, Jr. | [Github](https://github.com/cicbeast)                                       
 
-
-### Labs 11 - Second Product Cycle
-Arturo Obregon | [Github](https://github.com/artbrgn) | [Linkedin](https://www.linkedin.com/in/arturo-obregon/)
-Ashley Gaskins | [Github](https://github.com/ash827) | [Linkedin](https://www.linkedin.com/in/ashley-gaskins-17b87474/)
-James Barciz | [Github](https://github.com/JamesBarciz) | [Linkedin](https://www.linkedin.com/in/james-barciz-6b440413a/)
-Pedro Escobedo | [Github](https://github.com/pedroescobedob) | [Linkedin](https://www.linkedin.com/in/pedroescobedob/)
 
 
 ## Directory Structure
