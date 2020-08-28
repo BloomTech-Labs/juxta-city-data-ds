@@ -7,6 +7,13 @@ You can find the project at [findur.city](http://www.findur.city/).
 ## Contributors
 
 ### Labs 11 - Second Product Cycle
+
+#### Team Lead
+
+Kelly Moreira [Github](https://github.com/misskellymore) | [Linkedin](https://www.linkedin.com/in/kemore/)
+
+#### Data Scientists
+
 Arturo Obregon | [Github](https://github.com/artbrgn) | [Linkedin](https://www.linkedin.com/in/arturo-obregon/)
 
 Ashley Gaskins | [Github](https://github.com/ash827) | [Linkedin](https://www.linkedin.com/in/ashley-gaskins-17b87474/)
@@ -16,6 +23,12 @@ James Barciz | [Github](https://github.com/JamesBarciz) | [Linkedin](https://www
 Pedro Escobedo | [Github](https://github.com/pedroescobedob) | [Linkedin](https://www.linkedin.com/in/pedroescobedob/)
 
 ### Labs 7 - First Product Cycle
+
+#### Team Lead
+
+Haden Moore [Github](https://github.com/HadenMoore) | [Linkedin](https://www.linkedin.com/in/hadenmoore/)
+
+#### Data Scientists
 
 Anika Zolman-Nacey | [Github](https://github.com/AnikaZN)
 
