@@ -6,20 +6,19 @@ You can find the project at [findur.city](http://www.findur.city/).
 
 ## Contributors
 
-### Version 1.0
+### Labs 7 - First Product Cycle
 
-[Anika Zolman-Nacey](https://github.com/AnikaZN)                               |[Karthik Mahendra](https://github.com/kmk028)                                        |                                       [Raul Harrington, Jr.](https://github.com/cicbeast)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ24AE9UN-a7a80435887f-512" width = "200" />](https://github.com/AnikaZN)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-U7ZHKHH1C-89bec4c1baf5-512" width = "200" />](https://github.com/kmk028)                       |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHZ6UE2G4-e86f386a7ac0-512" width = "200" />](https://github.com/cicbeast)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/AnikaZN)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kmk028)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cicbeast)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/anika-zolman-nacey/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/karthik-mahendra-a63a4324/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/raul-harrington-1b490a56/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+Anika Zolman-Nacey | [Github](https://github.com/AnikaZN)
+Karthik Mahendra | [Github](https://github.com/kmk028)
+Raul Harrington, Jr. | [Github](https://github.com/cicbeast)                                       
 
 
-### Version 2.0
-| [Arturo Obregon](https://github.com/artbrgn) | [Ashley Gaskins](https://github.com/ash827) | [James Barciz](https://github.com/JamesBarciz) | [Pedro Escobedo](https://github.com/pedroescobedob) |
-|------------------------------------------------|---------------------------------------------------|------------------------------------------|-------------------------------------------|
-|<img src="https://ca.slack-edge.com/ESZCHB482-W012BRNMTB8-82acaec7de4b-512" width="200" />|<img src="https://ca.slack-edge.com/ESZCHB482-W0138D46256-4eebe2498089-512" width="200" />|<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0JLFM-43dd24c17b45-512" width="200" />|<img src="https://avatars3.githubusercontent.com/u/52268232?s=460&u=a0a5b3d59810d9407f436a926bafc10cf052e22f&v=4" width="200" />|
-|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/artbrgn) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/arturo-obregon/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ash827) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ashley-gaskins-17b87474/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JamesBarciz) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/james-barciz-6b440413a/)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/pedroescobedob) [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/pedroescobedob/)|
+### Labs 11 - Second Product Cycle
+Arturo Obregon | [Github](https://github.com/artbrgn) | [Linkedin](https://www.linkedin.com/in/arturo-obregon/)
+Ashley Gaskins | [Github](https://github.com/ash827) | [Linkedin](https://www.linkedin.com/in/ashley-gaskins-17b87474/)
+James Barciz | [Github](https://github.com/JamesBarciz) | [Linkedin](https://www.linkedin.com/in/james-barciz-6b440413a/)
+Pedro Escobedo | [Github](https://github.com/pedroescobedob) | [Linkedin](https://www.linkedin.com/in/pedroescobedob/)
+
 
 ## Directory Structure
 ```
@@ -131,6 +130,8 @@ AWS SageMaker
 
 Import.io
 
+Mapbox
+
 
 ### Data Sources
 -   [City-Data.com] (https://www.city-data.com/)
@@ -138,6 +139,10 @@ Import.io
 -   [Twitter.com] (https://twitter.com/home)
 
 -   [GCP] (https://cloud.google.com/)
+
+-   [CDC] (https://www.cdc.gov/heartdisease/facts.htm)
+
+-   [Johns Hopkins] (https://coronavirus.jhu.edu/us-map)
 
 ### Python Notebooks
 
